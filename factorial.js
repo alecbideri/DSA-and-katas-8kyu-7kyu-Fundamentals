@@ -12,7 +12,7 @@ function factorial(n){
 
     while (n>0){
         product *= n ;
-        n--
+        n--;
     }
 
     return product;
