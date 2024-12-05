@@ -30,7 +30,7 @@ if (team2.length < 2){
     for (var j = 0 ; j < team2.length ; j++){
         sum2+= team2[j];
     }
-
+     
     return newArray = [sum1 , sum2];
 }
 
