@@ -1,17 +1,9 @@
-function insert(num) {
-    let newArray = String(num).split(''); // Convert number to array of digits
-    let anotherArray = [];                // Store resulting elements
+let array = [];
+let newArray = [1,2,3];
 
-    for (var i = 0; i < newArray.length; i++) {
-        anotherArray.push(newArray[i]);   // Add the current digit
-        
-        // Check if both current and next digits are odd
-        if (i < newArray.length - 1 && Number(newArray[i]) % 2 !== 0 && Number(newArray[i + 1]) % 2 !== 0) {
-            anotherArray.push('-');       // Insert hyphen between two odd numbers
-        }
-    }
-
-    return anotherArray.join('');         // Join the array into a single string
+for (var i = 0 ; i < 5 ; i++){
+    array = [i+1 , i];
+    newArray = array ;
 }
 
-console.log(insert(124578)); // Example: "1245-7-8"
+console.log(newArray);
