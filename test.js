@@ -1,31 +1,17 @@
-function calc(string) {
-    // Step 1: Convert each character to its ASCII code and concatenate them to form a single number (total1)
-    let total1 = '';
-    for (let i = 0; i < string.length; i++) {
-        total1 += string.charCodeAt(i);
+function insert(num) {
+    let newArray = String(num).split(''); // Convert number to array of digits
+    let anotherArray = [];                // Store resulting elements
+
+    for (var i = 0; i < newArray.length; i++) {
+        anotherArray.push(newArray[i]);   // Add the current digit
+        
+        // Check if both current and next digits are odd
+        if (i < newArray.length - 1 && Number(newArray[i]) % 2 !== 0 && Number(newArray[i + 1]) % 2 !== 0) {
+            anotherArray.push('-');       // Insert hyphen between two odd numbers
+        }
     }
 
-    // Step 2: Replace all instances of '7' with '1' to form total2
-    let total2 = '';
-    for (let i = 0; i < total1.length; i++) {
-        total2 += total1[i] === '7' ? '1' : total1[i];
-    }
-
-    // Step 3: Calculate the sum of digits for both total1 and total2
-    let sumTotal1 = 0;
-    for (let i = 0; i < total1.length; i++) {
-        sumTotal1 += Number(total1[i]);
-    }
-
-    let sumTotal2 = 0;
-    for (let i = 0; i < total2.length; i++) {
-        sumTotal2 += Number(total2[i]);
-    }
-
-    console.log(`First total is ${total1} and next total is ${total2} , and the difference is ${sumTotal1} and  ${sumTotal2}`);
-
-    // Step 4: Return the difference between the sums of digits
-    return sumTotal1 - sumTotal2;
+    return anotherArray.join('');         // Join the array into a single string
 }
 
-console.log(calc("ifkhchlhfd")); // Output: 96
+console.log(insert(124578)); // Example: "1245-7-8"
