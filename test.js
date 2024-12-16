@@ -1,9 +1,17 @@
-let array = [];
-let newArray = [1,2,3];
+const _ = require('lodash');
 
-for (var i = 0 ; i < 5 ; i++){
-    array = [i+1 , i];
-    newArray = array ;
-}
+const object = {a:1 , b:{
+    c : 2 , 
+    d : [2,3],
+    e : new Date() , 
+    f : function() {
+        console.log("Hello world");
+    }
+}};
 
-console.log(newArray);
+const clonedObject = _.cloneDeep(object);
+
+clonedObject.b.d.push(5);
+
+console.log(clonedObject);
+console.log(object);
