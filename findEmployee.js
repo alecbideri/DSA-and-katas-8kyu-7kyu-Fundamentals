@@ -8,7 +8,7 @@ function findEmployee(fullName){
     (employee) => employee.firstName === firstName && employee.lastName === lastName
   );
 
-  return employee ? employee.role : "Does not work here!"
+  return employee ? employee.role : "Does not work here!" ;
 }
 
 console.log(findEmployee("Bideri Alec"));
