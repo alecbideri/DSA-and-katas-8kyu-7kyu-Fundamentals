@@ -1,3 +1,5 @@
+// Higher order function implementation
+
 function factory(x){
   return function(array){
     var newArray = [];
