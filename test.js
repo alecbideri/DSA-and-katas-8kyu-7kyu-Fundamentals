@@ -1,15 +1,21 @@
-function reverseAndShift(str) {
-  let reversed = str.split('').reverse().join('');
+function getCount(words){
+  const vowels = 'aieou';
+  const consonants = 'bcdfghjklmnpqrstvwxyz';
 
-  for (let i = 1; i < str.length; i++) {
-    const reversedPart = reversed.substring(i).split('').reverse().join(''); 
-    reversed = reversed.substring(0, i) + reversedPart; 
+  const normalized = words.toLowerCase();
+
+  let vowelsCount = 0 ;
+  let consonantsCount = 0 ;
+
+  for(const char of normalized){
+    if(vowels.includes(char)){
+      vowelsCount++ ;
+    } else if (consonants.includes(char)){
+      consonantsCount++ ;
+    }
   }
-
-  return reversed;
+   
+  return {'vowels ' : vowelsCount , 'consonants' : consonantsCount};
 }
 
-// Example usage:
-const inputString = "012345";
-const result = reverseAndShift(inputString);
-console.log(result); // Output: "504132"
+console.log(getCount('test'));
