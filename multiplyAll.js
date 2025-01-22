@@ -19,4 +19,4 @@ function MultiplyAll(arr){
   };
 }
 
-console.log(MultiplyAll([1,2,3])(3));
+console.log(MultiplyAll([1,2,3])(3)));

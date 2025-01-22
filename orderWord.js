@@ -1,5 +1,5 @@
 function orderWord(string){
-  if (string === ''){
+  if (string === '' || string === null){
     return "Invalid String!"
   }
 
