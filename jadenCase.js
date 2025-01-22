@@ -10,7 +10,7 @@ function jadenCase(String){
 
 String.prototype.toJadenCase = function () {
   return this 
-  . split()
+  . split(' ')
   .map(word=> word.charAt(0).toUpperCase() + word.slice(1))
   .join(' ');
 
