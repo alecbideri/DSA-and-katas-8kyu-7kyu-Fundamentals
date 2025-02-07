@@ -8,4 +8,3 @@ function vaporcode(string){
 
 console.log(vaporcode("Let's go to the movies"));
 
-
